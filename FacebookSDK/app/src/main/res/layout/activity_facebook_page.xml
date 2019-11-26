@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FacebookPage">
+
+    <EditText
+        android:id="@+id/edittexttitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập tiêu đề"
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/edittextdescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập mô tả"
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/edittexturl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập đường dẫn"
+        android:gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/buttonsharelink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share Link"
+        android:layout_gravity="center"
+        android:layout_marginTop="20px"/>
+
+    <ImageView
+        android:id="@+id/imageviewimage"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/buttonshareimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share Image"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <VideoView
+        android:id="@+id/videoviewvideo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/buttonpickvideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Video"
+            android:layout_marginLeft="40dp"/>
+
+        <Button
+            android:id="@+id/buttonsharevideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share Video"
+            android:layout_marginLeft="120dp"/>
+    </LinearLayout>
+
+</LinearLayout>
