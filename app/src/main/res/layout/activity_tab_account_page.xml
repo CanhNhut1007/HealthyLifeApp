@@ -83,7 +83,9 @@
             android:id="@+id/linearLayoutSetting"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true">
 
             <ImageView
                 android:layout_width="69dp"

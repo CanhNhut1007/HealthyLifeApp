@@ -7,11 +7,25 @@
     android:orientation="vertical"
     tools:context=".changeinformation.About_healthlife_activity">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="245dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/health_life" />
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButtonBackAbout"
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="206dp"
+            android:layout_height="74dp"
+            android:src="@drawable/health_life" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
