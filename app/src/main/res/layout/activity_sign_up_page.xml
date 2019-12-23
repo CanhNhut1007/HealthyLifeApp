@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".signup.SignUpPage"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:background="@layout/linearlayout_border">
+
+        <ImageButton
+            android:id="@+id/imageButtonBackSu"
+            android:layout_width="49dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="#ffffff"
+            android:padding="70dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/textViewSignUp"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Sign Up"
+            android:textColor="#808080"
+            android:textSize="24dp"
+            android:layout_marginLeft="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.246" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:text="  Email"
+            android:textColor="#007acc"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.246" />
+
+        <EditText
+            android:id="@+id/editTextEmailSu"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:background="@layout/linearlayout_border"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="  Password"
+            android:textColor="#007acc"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.246" />
+
+        <EditText
+            android:id="@+id/editTextPasswordSu"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@layout/linearlayout_border"
+            android:password="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <CheckBox
+            android:id="@+id/checkboxPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:gravity="left"
+            android:text="  I agree to Health Life's Terms and Privacy Policy."
+            android:textColor="#000000"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/buttonContinueSu"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rounding_button"
+            android:text="Continue" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="55dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="41dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="You haven an acount?"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textViewSignInAcount"
+                android:layout_width="94dp"
+                android:layout_height="41dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="Sign in >>"
+                android:textColor="#3399ff"
+                android:textSize="18dp"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

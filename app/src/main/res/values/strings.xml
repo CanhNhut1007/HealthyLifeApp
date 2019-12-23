@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SDK Facebook</string>
+
+    <string-array name="language">
+        <item>Vietnamese</item>
+        <item>English</item>
+        <item>Japanese</item>
+    </string-array>
+
+    <string-array name="sex">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+</resources>
