@@ -55,7 +55,7 @@ public class TabMyRecordPage extends Fragment {
                 dpd = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
-                        aboutbirday.setText(mDay +"/"+ (mMonth+1)+"/"+mYear);
+                        aboutbirday.setText(mYear +"-"+ (mMonth+1)+"-"+mDay);
                     }
                 },day, month, year);
                 dpd.show();

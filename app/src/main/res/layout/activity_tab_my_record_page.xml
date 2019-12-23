@@ -87,7 +87,7 @@
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
                         android:ems="10"
-                        android:hint="dd/mm/yyyy"
+                        android:hint="yyyy-mm-dd"
                         android:inputType="date"
                         android:paddingLeft="20px"
                         android:paddingTop="10px"
