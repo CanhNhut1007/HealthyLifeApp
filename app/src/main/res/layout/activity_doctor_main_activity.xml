@@ -9,7 +9,7 @@
 
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/pagerSettingAccount"
+        android:id="@+id/pagerdoctorpage"
         android:layout_width="match_parent"
         android:layout_height="671dp" />
 

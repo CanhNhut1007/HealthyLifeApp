@@ -38,6 +38,9 @@
             android:layout_height="wrap_content"
             android:text="About HealthLIfe"
             android:textSize="25dp"
+            android:background="#77B4B4B4"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:textStyle="bold" />
 
         <TextView
@@ -45,13 +48,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Team of Service"
-            android:textSize="18sp" />
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="22dp" />
 
         <TextView
             android:id="@+id/textView42"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Privacy Policy"
-            android:textSize="18sp" />
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="22dp" />
     </LinearLayout>
 </LinearLayout>

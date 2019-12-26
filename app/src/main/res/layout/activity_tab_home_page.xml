@@ -24,13 +24,17 @@
                 android:id="@+id/txthi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="Hi Hong Nhut"
-                android:textSize="24sp"
+                android:textSize="24dp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:orientation="horizontal">
 
                 <EditText
@@ -47,6 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/rounding_button"
                     android:text="@android:string/search_go" />
             </LinearLayout>
 
@@ -66,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Result Search"
-            android:textSize="18sp"
+            android:textSize="20dp"
             android:textStyle="italic" />
 
         <ScrollView
@@ -85,25 +90,46 @@
 
                     <TableRow
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_marginRight="20sp"
-                            android:text="Patient ID" />
+                            android:layout_marginLeft="10sp"
+                            android:layout_marginRight="10sp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Patient ID"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_marginRight="10sp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Patient Name"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_marginRight="10sp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Identify Card"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
 
                         <TextView
                             android:layout_marginRight="20sp"
-                            android:text="Patient Name" />
-
-                        <TextView
-                            android:layout_marginRight="20sp"
-
-                            android:text="Identify Card" />
-
-                        <TextView
-                            android:layout_marginRight="20sp"
-                            android:text="" />
+                            android:text=""
+                            android:textSize="18sp" />
                     </TableRow>
 
 

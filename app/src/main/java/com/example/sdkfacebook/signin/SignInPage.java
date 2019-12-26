@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.sdkfacebook.R;
+import com.example.sdkfacebook.doctor.doctor_main_activity;
 import com.example.sdkfacebook.mainactivity.MainHealthLifePage;
 import com.example.sdkfacebook.signup.SignUpPage;
 
@@ -75,8 +76,19 @@ public class SignInPage extends AppCompatActivity {
         btSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignInPage.this, MainHealthLifePage.class);
-                startActivity(intent);
+                String e = edtEmail.getText().toString();
+                String e1="123";
+                if(e==e1)
+                {
+                    Intent intent = new Intent(SignInPage.this, MainHealthLifePage.class);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Intent intent = new Intent(SignInPage.this, doctor_main_activity.class);
+                    startActivity(intent);
+                }
+
             }
         });
     }

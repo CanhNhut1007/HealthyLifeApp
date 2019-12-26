@@ -32,6 +32,9 @@
             android:id="@+id/txtyouremail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#77B4B4B4"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:text="Your Email"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -50,9 +53,11 @@
                     android:id="@+id/textView33"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_weight="1"
                     android:text="Current login email"
-                    android:textSize="18sp" />
+                    android:textSize="22dp" />
 
                 <TextView
                     android:id="@+id/textView34"
@@ -69,8 +74,10 @@
                 android:id="@+id/textView35"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:text="Enter your new login email"
-                android:textSize="18sp" />
+                android:textSize="22dp" />
 
             <EditText
                 android:id="@+id/editText3"
@@ -78,14 +85,17 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Login Email"
+                android:textSize="20dp"
                 android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/textView36"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:text="Enter password to change your login email"
-                android:textSize="18sp" />
+                android:textSize="22dp" />
 
             <EditText
                 android:id="@+id/editText4"
@@ -93,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Password"
+                android:textSize="20dp"
                 android:inputType="textPersonName" />
 
             <LinearLayout
@@ -105,6 +116,7 @@
                     android:layout_width="47dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/rounding_button"
                     android:text="Save" />
 
                 <Button
@@ -112,6 +124,7 @@
                     android:layout_width="4dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/rounding_button"
                     android:text="@android:string/cancel" />
             </LinearLayout>
 
