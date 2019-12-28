@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="ADD HEALTH RECORD"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtDateAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="yyyy-mm-dd"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/edtDescriptionAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="text" />
+
+
+    <EditText
+        android:id="@+id/edtDiagnosisAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Diagnosis"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtResultAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Result"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtNotesAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Notes"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtPatientViewAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Patient View"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtTotalFeeAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="TotalFee"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnSaveAddRecord"
+        android:layout_width="139dp"
+        android:layout_height="43dp"
+        android:background="@drawable/rounding_button"
+        android:layout_marginTop="10dp"
+        android:text="Save"
+        android:layout_gravity="center"
+        android:textColor="#000000" />
+</LinearLayout>

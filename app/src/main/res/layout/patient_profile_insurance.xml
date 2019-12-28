@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="UPDATE INSURANCE"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtInsuranceCordUp_p"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Health Insurance Card Code"
+        android:inputType="text" />
+
+
+    <EditText
+        android:id="@+id/edtCardCodeUp_p"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Hospital Register"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edtMFDUp_p"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="yyyy-mm-dd"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/edtEXPUp_p"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="yyyy-mm-dd"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/btnPatientProfileIns"
+        android:layout_width="139dp"
+        android:layout_height="43dp"
+        android:background="@drawable/rounding_button"
+        android:layout_marginTop="10dp"
+        android:text="Save"
+        android:layout_gravity="center"
+        android:textColor="#000000" />
+</LinearLayout>

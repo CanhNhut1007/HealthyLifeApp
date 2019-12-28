@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.healthlife">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".patientactivity.PatientDoctorProfile"></activity>
+        <activity android:name=".doctoractivity.DoctorHealthRecordPage" />
+        <activity android:name=".doctoractivity.DoctorPatientRecordPage" />
+        <activity android:name=".patientactivity.PatientSupportPage" />
+        <activity android:name=".patientactivity.PatientSettingPage" />
+        <activity android:name=".patientactivity.PatientProfilePage" />
+        <activity android:name=".patientactivity.PatientNotificationPage" />
+        <activity android:name=".patientactivity.PatientMyRecordPage" />
+        <activity android:name=".patientactivity.PatientHomePage" />
+        <activity android:name=".patientactivity.PatientAccountPage" />
+        <activity android:name=".doctoractivity.DoctorSupportPage" />
+        <activity android:name=".doctoractivity.DoctorSettingPage" />
+        <activity android:name=".doctoractivity.DoctorProfilePage" />
+        <activity android:name=".doctoractivity.DoctorAccountPage" />
+        <activity android:name=".doctoractivity.DoctorNotificationPage" />
+        <activity android:name=".doctoractivity.DoctorListPatientPage" />
+        <activity android:name=".doctoractivity.DoctorHomePage" />
+        <activity android:name=".signin.ResetPasswordPage" />
+        <activity android:name=".signup.WelcomePage" />
+        <activity android:name=".signup.VerificationPage" />
+        <activity android:name=".signin.ForgotPasswordPage" />
+        <activity android:name=".signup.SignUpPage" />
+        <activity android:name=".signin.SignInPage" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

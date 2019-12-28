@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homedoctor"
+        android:title="Home"
+        android:icon="@drawable/ic_home_black_24dp">
+
+    </item>
+
+    <item
+        android:id="@+id/myrecord"
+        android:title="My Record"
+        android:icon="@drawable/ic_assignment_black_24dp">
+
+    </item>
+
+    <item
+        android:id="@+id/notificationdoctor"
+        android:title="Notification"
+        android:icon="@drawable/ic_notifications_black_24dp">
+
+    </item>
+
+    <item
+        android:id="@+id/accountdoctor"
+        android:title="Account"
+        android:icon="@drawable/ic_account_circle_black_24dp">
+
+    </item>
+
+    <item
+        android:id="@+id/profiledoctor"
+        android:title="Profile"
+        android:icon="@drawable/ic_person_black_24dp">
+
+    </item>
+
+    <item
+        android:id="@+id/settingdoctor"
+        android:title="Setting"
+        android:icon="@drawable/ic_settings_black_24dp">
+
+    </item>
+
+    <item
+        android:id="@+id/supportdoctor"
+        android:title="Support"
+        android:icon="@drawable/ic_build_black_24dp">
+
+    </item>
+
+    <item
+        android:id="@+id/logoutdoctor"
+        android:title="Log out"
+        android:icon="@drawable/ic_exit_to_app_black_24dp">
+
+    </item>
+
+</menu>
