@@ -33,86 +33,108 @@ public class TabMyRecordPage extends Fragment {
     EditText aboutbirday;
     Calendar C;
     DatePickerDialog dpd;
-//    ExpandableListView expandableListView;
-//    ExpandableListAdapter expandableListAdapter;
-//    List<String> expandableListTitle;
-//    HashMap<String, List<String>> expandableListDetail;
+    ExpandableListView expandableListView;
+    ExpandableListAdapter expandableListAdapter;
+    List<String> expandableListHeader;
+    HashMap<String, List<Info_class>> expandableListDetail;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         row=inflater.inflate(R.layout.activity_tab_my_record_page, container, false);
+//
+//        aboutbirday=row.findViewById(R.id.aboutBirthday);
+//        aboutbirday.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                C = Calendar.getInstance();
+//                int day = C.get(Calendar.DAY_OF_MONTH);
+//                int month = C.get(Calendar.MONTH);
+//                int year = C.get(Calendar.YEAR);
+//
+//                dpd = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+//                    @Override
+//                    public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
+//                        aboutbirday.setText(mYear +"-"+ (mMonth+1)+"-"+mDay);
+//                    }
+//                },day, month, year);
+//                dpd.show();
+//            }
+//        });
+//
+//        Spinner spinnerlanguage = row.findViewById(R.id.spinner_language);
+//        ArrayAdapter<String> adapterlanguage = new ArrayAdapter<String >(getActivity(), android.R.layout.simple_list_item_1 ,getResources().getStringArray(R.array.language));
+//        adapterlanguage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerlanguage.setAdapter(adapterlanguage);
+//
+//        Spinner spinnersex = row.findViewById(R.id.spinner_sex);
+//        ArrayAdapter<String> adaptersex = new ArrayAdapter<String >(getActivity(), android.R.layout.simple_list_item_1 ,getResources().getStringArray(R.array.sex));
+//        adaptersex.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnersex.setAdapter(adaptersex);
+        //----------------
 
-        aboutbirday=row.findViewById(R.id.aboutBirthday);
-        aboutbirday.setOnClickListener(new View.OnClickListener() {
+        expandableListView = row.findViewById(R.id.expandableListView);
+        expandableListDetail = ExpandableListDataPump.getData();
+        expandableListHeader = new ArrayList<String>(expandableListDetail.keySet());
+        expandableListAdapter = new CustomExpandableListAdapter(getActivity(), expandableListHeader, expandableListDetail);
+        expandableListView.setAdapter(expandableListAdapter);
+
+        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
-            public void onClick(View v) {
-                C = Calendar.getInstance();
-                int day = C.get(Calendar.DAY_OF_MONTH);
-                int month = C.get(Calendar.MONTH);
-                int year = C.get(Calendar.YEAR);
-
-                dpd = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
-                        aboutbirday.setText(mYear +"-"+ (mMonth+1)+"-"+mDay);
-                    }
-                },day, month, year);
-                dpd.show();
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                Toast.makeText(getActivity(),
+                        expandableListHeader.get(groupPosition) + "Child Click",
+                        Toast.LENGTH_SHORT).show();
+                return false;
             }
         });
 
-        Spinner spinnerlanguage = row.findViewById(R.id.spinner_language);
-        ArrayAdapter<String> adapterlanguage = new ArrayAdapter<String >(getActivity(), android.R.layout.simple_list_item_1 ,getResources().getStringArray(R.array.language));
-        adapterlanguage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerlanguage.setAdapter(adapterlanguage);
+        expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+                Toast.makeText(getActivity(),
+                        expandableListHeader.get(groupPosition) + "Group Click",
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
 
-        Spinner spinnersex = row.findViewById(R.id.spinner_sex);
-        ArrayAdapter<String> adaptersex = new ArrayAdapter<String >(getActivity(), android.R.layout.simple_list_item_1 ,getResources().getStringArray(R.array.sex));
-        adaptersex.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnersex.setAdapter(adaptersex);
+        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                Toast.makeText(getActivity(),
+                        expandableListHeader.get(groupPosition) + " List Expanded.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
 
-//        expandableListView = row.findViewById(R.id.expandableListView);
-//        expandableListDetail = ExpandableListDataPump.getData();
-//        expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
-//        expandableListAdapter = new CustomExpandableListAdapter(getActivity(), expandableListTitle, expandableListDetail);
-//        expandableListView.setAdapter(expandableListAdapter);
-//        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-//            @Override
-//            public void onGroupExpand(int groupPosition) {
-//                Toast.makeText(getActivity(),
-//                        expandableListTitle.get(groupPosition) + " List Expanded.",
-//                        Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//        expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-//
-//            @Override
-//            public void onGroupCollapse(int groupPosition) {
-//                Toast.makeText(getActivity(),
-//                        expandableListTitle.get(groupPosition) + " List Collapsed.",
-//                        Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//
-//        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-//            @Override
-//            public boolean onChildClick(ExpandableListView parent, View v,
-//                                        int groupPosition, int childPosition, long id) {
-//                Toast.makeText(
-//                        getActivity(),
-//                        expandableListTitle.get(groupPosition)
-//                                + " -> "
-//                                + expandableListDetail.get(
-//                                expandableListTitle.get(groupPosition)).get(
-//                                childPosition), Toast.LENGTH_SHORT
-//                ).show();
-//                return false;
-//            }
-//        });
-//
+        expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
+
+            @Override
+            public void onGroupCollapse(int groupPosition) {
+                Toast.makeText(getActivity(),
+                        expandableListHeader.get(groupPosition) + " List Collapsed.",
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v,
+                                        int groupPosition, int childPosition, long id) {
+                Toast.makeText(
+                        getActivity(),
+                        expandableListHeader.get(groupPosition)
+                                + " -> "
+                                + expandableListDetail.get(
+                                expandableListHeader.get(groupPosition)).get(
+                                childPosition), Toast.LENGTH_SHORT
+                ).show();
+                return false;
+            }
+        });
+
         return row;
     }
 }

@@ -2,12 +2,26 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#ecf0f1"
+    android:padding="5dp"
+    android:layout_marginTop="3dp">
     <TextView
-        android:id="@+id/expandedListItem"
+        android:id="@+id/expandedListItemTitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp" />
+        android:paddingBottom="10dp"
+        android:textSize="18dp"
+        android:textColor="#34495e"/>
+    <TextView
+        android:id="@+id/expandedListItemContent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="#7f8c8d"
+        android:textSize="16dp"/>
 </LinearLayout>

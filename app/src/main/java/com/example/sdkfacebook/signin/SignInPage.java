@@ -78,7 +78,7 @@ public class SignInPage extends AppCompatActivity {
             public void onClick(View v) {
                 String e = edtEmail.getText().toString();
                 String e1="123";
-                if(e==e1)
+                if(e.equals(e1))
                 {
                     Intent intent = new Intent(SignInPage.this, MainHealthLifePage.class);
                     startActivity(intent);

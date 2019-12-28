@@ -30,15 +30,26 @@ public class doctor_accout extends Fragment {
         linearLayout = row.findViewById(R.id.linearLayoutSetting);
         SettingAccount_();
         Logout();
+        EditProfile();
 
         return row;
+    }
+
+    private void EditProfile() {
+        txtedit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SettingAccount.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void Logout() {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), MainActivity.class);
+                Intent intent=new Intent(getActivity(), doctor_main_activity.class);
                 startActivity(intent);
             }
         });
