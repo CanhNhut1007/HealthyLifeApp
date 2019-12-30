@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.example.sdkfacebook.R;
@@ -41,15 +42,6 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int listPosition, final int expandedListPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
-//        final String expandedListTest = (String) getChild(listPosition, expandedListPosition);
-//        if (convertView == null){
-//            LayoutInflater layoutInflater = (LayoutInflater) this.context
-//                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//            convertView = layoutInflater.inflate(R.layout.list_item, null);
-//        }
-//        TextView expandedListTextView = (TextView) convertView.findViewById(R.id.expandedListItem);
-//        expandedListTextView.setText(expandedListTest);
-//        return convertView;
         if(convertView==null){
             LayoutInflater layoutInflater = LayoutInflater.from(context);
             convertView = layoutInflater.inflate(R.layout.list_item, parent, false);
@@ -82,22 +74,20 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getGroupView(int listPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-//        String listTitle = (String) getGroup(listPosition);
-//        if(convertView==null){
-//            LayoutInflater layoutInflater = (LayoutInflater) this.context.
-//                    getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//            convertView = layoutInflater.inflate(R.layout.list_group, null);
-//        }
-//        TextView listTitleTextView = (TextView) convertView.findViewById(R.id.listTitle);
-//        listTitleTextView.setTypeface(null, Typeface.BOLD);
-//        listTitleTextView.setText(listTitle);
-//        return convertView;
+    public View getGroupView(final int listPosition, final boolean isExpanded, View convertView, final ViewGroup parent) {
         if(convertView==null){
             LayoutInflater layoutInflater=LayoutInflater.from(context);
             convertView = layoutInflater.inflate(R.layout.list_group, parent, false);
         }
         TextView listHeaderTV = (TextView) convertView.findViewById(R.id.listHeader);
+        listHeaderTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // frag.expandandcollapse(isExpanded,groupPosition);
+                if (isExpanded) ((ExpandableListView) parent).collapseGroup(listPosition);
+                else ((ExpandableListView) parent).expandGroup(listPosition, true);
+            }
+        });
         listHeaderTV.setText(expandableListHeader.get(listPosition));
         return convertView;
     }
