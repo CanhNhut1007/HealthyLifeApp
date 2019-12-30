@@ -1,7 +1,10 @@
 package com.example.sdkfacebook.tab_my_record;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,11 +31,15 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.zip.Inflater;
+
+import static android.content.ContentValues.TAG;
 
 public class TabMyRecordPage extends Fragment {
 
     View row;
     Button btnChange;
+    String test;
     EditText aboutbirday;
     Calendar C;
     DatePickerDialog dpd;
@@ -39,7 +47,6 @@ public class TabMyRecordPage extends Fragment {
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListHeader;
     HashMap<String, List<Info_class>> expandableListDetail;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -50,7 +57,18 @@ public class TabMyRecordPage extends Fragment {
         expandableListHeader = new ArrayList<String>(expandableListDetail.keySet());
         expandableListAdapter = new CustomExpandableListAdapter(getActivity(), expandableListHeader, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
-        btnChange = row.findViewById(R.id.btn_Change);
+//        View row1=inflater1.inflate(R.layout.list_group,container,false);
+//        btnChange=row1.findViewById(R.id.btn_Change);
+//        btnChange.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(
+//                        getActivity());
+//                builder.setTitle("Text");
+//                builder.setMessage("test 111");
+//                builder.create().show();
+//            }
+//        });
 
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override

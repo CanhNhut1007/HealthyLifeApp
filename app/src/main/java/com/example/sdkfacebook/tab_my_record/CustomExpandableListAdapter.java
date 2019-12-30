@@ -6,8 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sdkfacebook.R;
 
@@ -19,6 +22,8 @@ import java.util.List;
 public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
     private static final String TAG = "CustomExpandableListAdapter";
     private Context context;
+    EditText expandedListTVContent;
+
     private List<String> expandableListHeader;
     private HashMap<String, List<Info_class>> expandableListDetail;
 
@@ -47,7 +52,7 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
             convertView = layoutInflater.inflate(R.layout.list_item, parent, false);
         }
         TextView expandedListTVTitle = (TextView) convertView.findViewById(R.id.expandedListItemTitle);
-        TextView expandedListTVContent = (TextView) convertView.findViewById(R.id.expandedListItemContent);
+         expandedListTVContent = (EditText) convertView.findViewById(R.id.expandedListItemContent);
         expandedListTVTitle.setText(((Info_class) getChild(listPosition, expandedListPosition)).getTitle());
         expandedListTVContent.setText(((Info_class) getChild(listPosition, expandedListPosition)).getContent());
         return convertView;
@@ -79,13 +84,22 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
             LayoutInflater layoutInflater=LayoutInflater.from(context);
             convertView = layoutInflater.inflate(R.layout.list_group, parent, false);
         }
-        TextView listHeaderTV = (TextView) convertView.findViewById(R.id.listHeader);
+        final TextView listHeaderTV = (TextView) convertView.findViewById(R.id.listHeader);
         listHeaderTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // frag.expandandcollapse(isExpanded,groupPosition);
                 if (isExpanded) ((ExpandableListView) parent).collapseGroup(listPosition);
                 else ((ExpandableListView) parent).expandGroup(listPosition, true);
+            }
+        });
+        final Button btnChange=convertView.findViewById(R.id.btn_Change);
+        btnChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expandedListTVContent.setEnabled(true);
+                Toast.makeText(context,listHeaderTV.getText().toString(),Toast.LENGTH_LONG).show();
+
             }
         });
         listHeaderTV.setText(expandableListHeader.get(listPosition));
