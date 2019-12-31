@@ -16,7 +16,7 @@ import com.example.sdkfacebook.MainActivity;
 import com.example.sdkfacebook.R;
 
 public class TabAccountPage extends Fragment {
-    LinearLayout linearLayout,logout;
+    LinearLayout linearLayout,logout, helpSupport;
     TextView txtedit;
     View row;
     @Nullable
@@ -25,12 +25,24 @@ public class TabAccountPage extends Fragment {
         row=inflater.inflate(R.layout.activity_tab_account_page, null);//container, false);
         txtedit=row.findViewById(R.id.txtedit);
         logout=row.findViewById(R.id.logout);
+        helpSupport = row.findViewById(R.id.linearLayoutHelp);
 
         linearLayout = row.findViewById(R.id.linearLayoutSetting);
         SettingAccount_();
         Logout();
+        HelpSupport();
 
                 return row;
+    }
+
+    private void HelpSupport() {
+        helpSupport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Help_support_activity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void Logout() {
