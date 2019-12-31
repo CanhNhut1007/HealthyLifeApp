@@ -13,6 +13,7 @@ android:background="#ffffff">
     android:layout_gravity="center"
     android:layout_marginTop="5dp"
     android:text="SETTING EMAIL"
+    android:gravity="center"
     android:textSize="25sp"
     android:textStyle="bold" />
 
@@ -35,10 +36,10 @@ android:background="#ffffff">
     android:inputType="textPassword" />
 
 <Button
-    android:id="@+id/btnSaveEmail"
-    android:layout_width="139dp"
-    android:layout_height="43dp"
-    android:background="@drawable/rounding_button"
+    android:id="@+id/btnSavePatientEmail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorHealth"
     android:layout_marginTop="10dp"
     android:text="Save"
     android:layout_gravity="center"

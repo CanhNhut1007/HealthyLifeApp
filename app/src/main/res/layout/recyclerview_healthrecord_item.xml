@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="15dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutHealthRecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageViewHR"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_assignment_black_24dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textViewHealthRecordID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HR00000000"
+                android:textSize="18dp"
+                android:textColor="#0066ff"
+                android:layout_gravity="left" />
+
+            <TextView
+                android:id="@+id/textViewEmployeeIDHR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EI00000001"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/textViewDateHR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2019-12-29"
+                android:textSize="14dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

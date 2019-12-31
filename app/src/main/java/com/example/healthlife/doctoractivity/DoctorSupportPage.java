@@ -22,6 +22,7 @@ public class DoctorSupportPage extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private Toolbar toolbar;
     private ActionBar actionbar;
+    String accountid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,9 @@ public class DoctorSupportPage extends AppCompatActivity {
         actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
+        Intent intent = getIntent();
+        accountid = intent.getStringExtra("AccountID");
+
 
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigationsupport);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -51,36 +55,43 @@ public class DoctorSupportPage extends AppCompatActivity {
                 if (id == R.id.homedoctor)
                 {
                     Intent intent = new Intent(DoctorSupportPage.this, DoctorHomePage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.listpatient)
                 {
                     Intent intent = new Intent(DoctorSupportPage.this, DoctorListPatientPage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.notificationdoctor)
                 {
                     Intent intent = new Intent(DoctorSupportPage.this, DoctorNotificationPage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.accountdoctor)
                 {
                     Intent intent = new Intent(DoctorSupportPage.this, DoctorAccountPage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.profiledoctor)
                 {
                     Intent intent = new Intent(DoctorSupportPage.this, DoctorProfilePage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.settingdoctor)
                 {
                     Intent intent = new Intent(DoctorSupportPage.this, DoctorSettingPage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.supportdoctor)
                 {
                     Intent intent = new Intent(DoctorSupportPage.this, DoctorSupportPage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.logoutdoctor)

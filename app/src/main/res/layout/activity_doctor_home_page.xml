@@ -24,72 +24,37 @@
             tools:ignore="MissingConstraints" />
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/result"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:orientation="vertical"
-            android:visibility="invisible"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            tools:ignore="MissingConstraints"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.355">
+            app:layout_constraintVertical_bias="0.980">
 
-            <ScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="400dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewHome"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content" />
 
-                    <TableLayout
-                        android:id="@+id/tablelayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TableRow
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_marginRight="20sp"
-                                android:text="Patient ID" />
-
-                            <TextView
-                                android:layout_marginRight="20sp"
-                                android:text="Patient Name" />
-
-                            <TextView
-                                android:layout_marginRight="20sp"
-
-                                android:text="Identify Card" />
-
-                            <TextView
-                                android:layout_marginRight="20sp"
-                                android:text="" />
-                        </TableRow>
+            </LinearLayout>
 
 
-                    </TableLayout>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </ScrollView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
 
         <TextView
             android:id="@+id/txthi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hi Hong Nhut"
-            android:textSize="24sp"
+            android:textSize="24dp"
             android:textStyle="bold"
             android:layout_marginLeft="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -108,7 +73,9 @@
             app:layout_constraintHorizontal_bias="0.032"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.201">
+            app:layout_constraintVertical_bias="0.201"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <EditText
                 android:id="@+id/txtsearch"
@@ -119,30 +86,37 @@
                 android:hint="Search"
                 android:inputType="text" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@android:string/search_go" />
+                android:src="@drawable/ic_search_black_24dp" />
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView28"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Result Search"
-            android:textSize="18sp"
-            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.306"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintVertical_bias="0.300">
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Result Search"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

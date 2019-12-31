@@ -13,6 +13,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:text="UPDATE LISENCE"
+        android:gravity="center"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -32,11 +33,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="Country"
+        android:hint="License Country"
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/edtRelationshipUpLi"
+        android:id="@+id/edtLisenceEXPUpLi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -47,9 +48,9 @@
 
     <Button
         android:id="@+id/btnDoctorProfileLi"
-        android:layout_width="139dp"
-        android:layout_height="43dp"
-        android:background="@drawable/rounding_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorHealth"
         android:layout_marginTop="10dp"
         android:text="Save"
         android:layout_gravity="center"

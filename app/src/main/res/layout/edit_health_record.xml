@@ -14,7 +14,8 @@
         android:layout_marginTop="5dp"
         android:text="EDIT HEALTH RECORD"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center"/>
 
     <EditText
         android:id="@+id/edtDescriptionEdit"
@@ -73,9 +74,9 @@
 
     <Button
         android:id="@+id/btnSaveEditRecord"
-        android:layout_width="139dp"
-        android:layout_height="43dp"
-        android:background="@drawable/rounding_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorHealth"
         android:layout_marginTop="10dp"
         android:text="Save"
         android:layout_gravity="center"

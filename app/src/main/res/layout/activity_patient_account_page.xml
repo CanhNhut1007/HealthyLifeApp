@@ -79,7 +79,7 @@ android:id="@+id/drawerlayoutaccount_p">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         tools:ignore="MissingConstraints"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -95,10 +95,11 @@ android:id="@+id/drawerlayoutaccount_p">
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="103dp"
-                android:layout_height="match_parent"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 app:srcCompat="@drawable/ic_account_circle_black_24dp"
-                tools:ignore="VectorDrawableCompat" />
+                tools:ignore="VectorDrawableCompat"
+                android:layout_gravity="center"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -106,9 +107,9 @@ android:id="@+id/drawerlayoutaccount_p">
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/accountName_p"
+                    android:id="@+id/textViewPatientNamePatientAccount"
                     android:layout_width="match_parent"
-                    android:layout_height="49dp"
+                    android:layout_height="wrap_content"
                     android:gravity="bottom"
                     android:text=" Nguyet Chau"
                     android:layout_marginLeft="10dp"
@@ -116,7 +117,7 @@ android:id="@+id/drawerlayoutaccount_p">
                     android:textSize="24dp" />
 
                 <TextView
-                    android:id="@+id/txtedit"
+                    android:id="@+id/textViewEditProfilePatientAccount"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
                     android:text=" Edit profile"
@@ -124,9 +125,7 @@ android:id="@+id/drawerlayoutaccount_p">
                     android:textSize="18dp"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
-
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -144,17 +143,18 @@ android:id="@+id/drawerlayoutaccount_p">
         android:layout_marginLeft="20dp">
 
         <LinearLayout
+            android:id="@+id/linearLayoutLogoutPatientAccount"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="69dp"
-                android:layout_height="match_parent"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
                 android:src="@drawable/ic_exit_to_app_black_24dp"/>
 
             <TextView
-                android:id="@+id/textViewLogOutTA_p"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -183,17 +183,18 @@ android:id="@+id/drawerlayoutaccount_p">
         android:layout_marginLeft="20dp">
 
         <LinearLayout
+            android:id="@+id/linearLayoutSupportPatientAccount"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="69dp"
-                android:layout_height="match_parent"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
                 android:src="@drawable/ic_build_black_24dp"/>
 
             <TextView
-                android:id="@+id/textViewHelpSupportTA_p"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -222,18 +223,19 @@ android:id="@+id/drawerlayoutaccount_p">
         android:layout_marginLeft="20dp">
 
         <LinearLayout
+            android:id="@+id/linearLayoutSettingPatientAccount"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="69dp"
-                android:layout_height="match_parent"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 app:srcCompat="@drawable/ic_settings_black_24dp"
-                tools:ignore="VectorDrawableCompat" />
+                tools:ignore="VectorDrawableCompat"
+                android:layout_gravity="center"/>
 
             <TextView
-                android:id="@+id/textViewSettingsTA_p"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

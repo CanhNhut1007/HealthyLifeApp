@@ -3,6 +3,7 @@ package com.example.healthlife.patientactivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -22,6 +23,7 @@ public class PatientNotificationPage extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private Toolbar toolbar;
     private ActionBar actionbar;
+    String accountid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,9 @@ public class PatientNotificationPage extends AppCompatActivity {
         actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
+        Intent intent = getIntent();
+        accountid = intent.getStringExtra("AccountID");
+        Toast.makeText(PatientNotificationPage.this, accountid, Toast.LENGTH_SHORT).show();
 
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigationnotification_p);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -48,42 +53,49 @@ public class PatientNotificationPage extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id = menuItem.getItemId();
 
-                if (id == R.id.homedoctor)
+                if (id == R.id.homepatient)
                 {
                     Intent intent = new Intent(PatientNotificationPage.this, PatientHomePage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.myrecord)
                 {
                     Intent intent = new Intent(PatientNotificationPage.this, PatientMyRecordPage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
-                else if (id == R.id.notificationdoctor)
+                else if (id == R.id.notificationpatient)
                 {
                     Intent intent = new Intent(PatientNotificationPage.this, PatientNotificationPage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
-                else if (id == R.id.accountdoctor)
+                else if (id == R.id.accountpatient)
                 {
                     Intent intent = new Intent(PatientNotificationPage.this, PatientAccountPage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
-                else if (id == R.id.profiledoctor)
+                else if (id == R.id.profilepatient)
                 {
                     Intent intent = new Intent(PatientNotificationPage.this, PatientProfilePage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
-                else if (id == R.id.settingdoctor)
+                else if (id == R.id.settingpatient)
                 {
                     Intent intent = new Intent(PatientNotificationPage.this, PatientSettingPage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
-                else if (id == R.id.supportdoctor)
+                else if (id == R.id.supportpatient)
                 {
                     Intent intent = new Intent(PatientNotificationPage.this, PatientSupportPage.class);
+                    intent.putExtra("AccountID", accountid);
                     startActivity(intent);
                 }
-                else if (id == R.id.logoutdoctor)
+                else if (id == R.id.logoutpatient)
                 {
                     Intent intent = new Intent(PatientNotificationPage.this, MainActivity.class);
                     startActivity(intent);

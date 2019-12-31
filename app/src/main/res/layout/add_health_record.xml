@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
+        android:gravity="center"
         android:text="ADD HEALTH RECORD"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -82,9 +83,9 @@
 
     <Button
         android:id="@+id/btnSaveAddRecord"
-        android:layout_width="139dp"
-        android:layout_height="43dp"
-        android:background="@drawable/rounding_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorHealth"
         android:layout_marginTop="10dp"
         android:text="Save"
         android:layout_gravity="center"

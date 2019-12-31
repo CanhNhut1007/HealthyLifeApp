@@ -13,6 +13,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:text="UPDATE INSURANCE"
+        android:gravity="center"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -27,7 +28,7 @@
 
 
     <EditText
-        android:id="@+id/edtCardCodeUp_p"
+        android:id="@+id/edtHospitalRegisterUp_p"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -55,9 +56,9 @@
 
     <Button
         android:id="@+id/btnPatientProfileIns"
-        android:layout_width="139dp"
-        android:layout_height="43dp"
-        android:background="@drawable/rounding_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorHealth"
         android:layout_marginTop="10dp"
         android:text="Save"
         android:layout_gravity="center"
