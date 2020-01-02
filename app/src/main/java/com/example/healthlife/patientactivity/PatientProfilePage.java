@@ -73,7 +73,7 @@ public class PatientProfilePage extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
         Intent intent = getIntent();
-        accountid = intent.getStringExtra("AccountID");
+        accountid = intent.getStringExtra("UserID");
         Toast.makeText(PatientProfilePage.this, accountid, Toast.LENGTH_SHORT).show();
 
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigationprofile_p);
@@ -85,43 +85,43 @@ public class PatientProfilePage extends AppCompatActivity {
                 if (id == R.id.homepatient)
                 {
                     Intent intent = new Intent(PatientProfilePage.this, PatientHomePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.myrecord)
                 {
                     Intent intent = new Intent(PatientProfilePage.this, PatientMyRecordPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.notificationpatient)
                 {
                     Intent intent = new Intent(PatientProfilePage.this, PatientNotificationPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.accountpatient)
                 {
                     Intent intent = new Intent(PatientProfilePage.this, PatientAccountPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.profilepatient)
                 {
                     Intent intent = new Intent(PatientProfilePage.this, PatientProfilePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.settingpatient)
                 {
                     Intent intent = new Intent(PatientProfilePage.this, PatientSettingPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.supportpatient)
                 {
                     Intent intent = new Intent(PatientProfilePage.this, PatientSupportPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.logoutpatient)

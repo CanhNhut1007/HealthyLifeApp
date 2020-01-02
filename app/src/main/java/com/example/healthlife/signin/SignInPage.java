@@ -84,8 +84,8 @@ public class SignInPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SignInPage.this, DoctorHomePage.class);
-                intent.putExtra("AccountID", "ID00000001");
-                //intent.putExtra("AccountID", "ID00000004");
+                intent.putExtra("UserID", "850000002");
+                //intent.putExtra("UserID", "ID00000004");
                 startActivity(intent);
             }
         });

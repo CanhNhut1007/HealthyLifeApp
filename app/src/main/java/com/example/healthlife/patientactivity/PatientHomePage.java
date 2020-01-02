@@ -54,7 +54,7 @@ public class PatientHomePage extends AppCompatActivity {
     ArrayList<Doctor> arrayList;
     DoctorAdapter doctorAdapter;
     RequestQueue requestQueue;
-    String URL_GETNAME = Utils.GET_PATIENT_NAME + "ID00000004";
+    //String URL_GETNAME = Utils.GET_PATIENT_NAME + "ID00000004";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +78,7 @@ public class PatientHomePage extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
         Intent intent = getIntent();
-        accountid = intent.getStringExtra("AccountID");
+        accountid = intent.getStringExtra("UserID");
         Toast.makeText(PatientHomePage.this, accountid, Toast.LENGTH_SHORT).show();
 
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigationhome_p);
@@ -90,43 +90,43 @@ public class PatientHomePage extends AppCompatActivity {
                 if (id == R.id.homepatient)
                 {
                     Intent intent = new Intent(PatientHomePage.this, PatientHomePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.myrecord)
                 {
                     Intent intent = new Intent(PatientHomePage.this, PatientMyRecordPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.notificationpatient)
                 {
                     Intent intent = new Intent(PatientHomePage.this, PatientNotificationPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.accountpatient)
                 {
                     Intent intent = new Intent(PatientHomePage.this, PatientAccountPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.profilepatient)
                 {
                     Intent intent = new Intent(PatientHomePage.this, PatientProfilePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.settingpatient)
                 {
                     Intent intent = new Intent(PatientHomePage.this, PatientSettingPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.supportpatient)
                 {
                     Intent intent = new Intent(PatientHomePage.this, PatientSupportPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.logoutpatient)
@@ -145,6 +145,7 @@ public class PatientHomePage extends AppCompatActivity {
         txtSearch= (TextView) findViewById(R.id.txtsearch_p);
         btnSearch= (ImageButton) findViewById(R.id.btnSearch_p);
 
+        String URL_GETNAME = Utils.GET_PATIENT_NAME + accountid;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_GETNAME, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) { ;
@@ -175,7 +176,7 @@ public class PatientHomePage extends AppCompatActivity {
                     JSONArray array = new JSONArray(response);
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject doctor = array.getJSONObject(i);
-                        arrayList.add(new Doctor(doctor.getString("AccountID"), doctor.getString("EmployeeName"), doctor.getString("Speciality"), doctor.getString("AccountID"), R.drawable.ic_account_circle_black_24dp));
+                        arrayList.add(new Doctor(doctor.getString("UserID"), doctor.getString("EmployeeName"), doctor.getString("Speciality"), doctor.getString("AccountID"), R.drawable.ic_account_circle_black_24dp));
                     }
                     doctorAdapter = new DoctorAdapter(arrayList, getApplicationContext());
                     recyclerView.setAdapter(doctorAdapter);
@@ -212,7 +213,7 @@ public class PatientHomePage extends AppCompatActivity {
                                             JSONArray array = new JSONArray(response);
                                             for (int i = 0; i < array.length(); i++) {
                                                 JSONObject doctor = array.getJSONObject(i);
-                                                arrayList.add(new Doctor(doctor.getString("AccountID"), doctor.getString("EmployeeName"), doctor.getString("Speciality"), doctor.getString("AccountID"), R.drawable.ic_account_circle_black_24dp));                                            }
+                                                arrayList.add(new Doctor(doctor.getString("UserID"), doctor.getString("EmployeeName"), doctor.getString("Speciality"), doctor.getString("AccountID"), R.drawable.ic_account_circle_black_24dp));                                            }
                                             doctorAdapter = new DoctorAdapter(arrayList, getApplicationContext());
                                             recyclerView.setAdapter(doctorAdapter);
                                         } catch (JSONException e) {
@@ -221,7 +222,7 @@ public class PatientHomePage extends AppCompatActivity {
                                     }
                                     else
                                     {
-                                        Toast.makeText(PatientHomePage.this, "No Patient Found!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(PatientHomePage.this, "No Doctor Found!", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             },
@@ -229,7 +230,7 @@ public class PatientHomePage extends AppCompatActivity {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
                                     // error
-                                    Toast.makeText(PatientHomePage.this, error + ". Loi roi", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(PatientHomePage.this,  "Error!", Toast.LENGTH_SHORT).show();
                                 }
                             }
                     ) {

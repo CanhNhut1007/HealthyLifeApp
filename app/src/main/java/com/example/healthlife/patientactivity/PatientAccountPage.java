@@ -65,7 +65,7 @@ public class PatientAccountPage extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
         Intent intent = getIntent();
-        accountid = intent.getStringExtra("AccountID");
+        accountid = intent.getStringExtra("UserID");
         Toast.makeText(PatientAccountPage.this, accountid, Toast.LENGTH_SHORT).show();
 
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigationaccount_p);
@@ -77,43 +77,43 @@ public class PatientAccountPage extends AppCompatActivity {
                 if (id == R.id.homepatient)
                 {
                     Intent intent = new Intent(PatientAccountPage.this, PatientHomePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.myrecord)
                 {
                     Intent intent = new Intent(PatientAccountPage.this, PatientMyRecordPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.notificationpatient)
                 {
                     Intent intent = new Intent(PatientAccountPage.this, PatientNotificationPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.accountpatient)
                 {
                     Intent intent = new Intent(PatientAccountPage.this, PatientAccountPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.profilepatient)
                 {
                     Intent intent = new Intent(PatientAccountPage.this, PatientProfilePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.settingpatient)
                 {
                     Intent intent = new Intent(PatientAccountPage.this, PatientSettingPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.supportpatient)
                 {
                     Intent intent = new Intent(PatientAccountPage.this, PatientSupportPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.logoutpatient)
@@ -156,7 +156,7 @@ public class PatientAccountPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PatientAccountPage.this, PatientProfilePage.class);
-                intent.putExtra("AccountID", accountid);
+                intent.putExtra("UserID", accountid);
                 startActivity(intent);
             }
         });
@@ -168,7 +168,7 @@ public class PatientAccountPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PatientAccountPage.this, PatientSettingPage.class);
-                intent.putExtra("AccountID", accountid);
+                intent.putExtra("UserID", accountid);
                 startActivity(intent);
             }
         });
@@ -180,7 +180,7 @@ public class PatientAccountPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PatientAccountPage.this, PatientSupportPage.class);
-                intent.putExtra("AccountID", accountid);
+                intent.putExtra("UserID", accountid);
                 startActivity(intent);
             }
         });

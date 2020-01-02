@@ -47,7 +47,7 @@ public class PatientDoctorProfilePage extends AppCompatActivity {
         txtLicenseCountry = (TextView) findViewById(R.id.textViewLicenseCountryDoctorProfile);
         txtLicenseEXP = (TextView) findViewById(R.id.textViewLicenseEXPDoctorProfile);
         Intent intent = getIntent();
-        accountemployeeid = intent.getStringExtra("AccountID");
+        accountemployeeid = intent.getStringExtra("UserID");
         Toast.makeText(PatientDoctorProfilePage.this, accountemployeeid, Toast.LENGTH_SHORT).show();
 
         ViewHealthRecord();

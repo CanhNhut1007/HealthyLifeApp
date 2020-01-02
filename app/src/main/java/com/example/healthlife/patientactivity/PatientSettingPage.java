@@ -71,7 +71,7 @@ public class PatientSettingPage extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
         Intent intent = getIntent();
-        accountid = intent.getStringExtra("AccountID");
+        accountid = intent.getStringExtra("UserID");
         Toast.makeText(PatientSettingPage.this, accountid, Toast.LENGTH_SHORT).show();
 
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigationsetting_p);
@@ -83,43 +83,43 @@ public class PatientSettingPage extends AppCompatActivity {
                 if (id == R.id.homepatient)
                 {
                     Intent intent = new Intent(PatientSettingPage.this, PatientHomePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.myrecord)
                 {
                     Intent intent = new Intent(PatientSettingPage.this, PatientMyRecordPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.notificationpatient)
                 {
                     Intent intent = new Intent(PatientSettingPage.this, PatientNotificationPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.accountpatient)
                 {
                     Intent intent = new Intent(PatientSettingPage.this, PatientAccountPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.profilepatient)
                 {
                     Intent intent = new Intent(PatientSettingPage.this, PatientProfilePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.settingpatient)
                 {
                     Intent intent = new Intent(PatientSettingPage.this, PatientSettingPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.supportpatient)
                 {
                     Intent intent = new Intent(PatientSettingPage.this, PatientSupportPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.logoutpatient)
@@ -199,7 +199,7 @@ public class PatientSettingPage extends AppCompatActivity {
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(PatientSettingPage.this, error+". Loi roi", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PatientSettingPage.this, "Error!", Toast.LENGTH_SHORT).show();
                         }
                     }) ;
                     requestQueue.add(jsonObjectRequest);

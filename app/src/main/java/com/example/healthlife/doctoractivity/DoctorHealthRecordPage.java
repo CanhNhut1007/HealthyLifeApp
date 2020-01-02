@@ -122,14 +122,14 @@ public class DoctorHealthRecordPage extends AppCompatActivity {
     public void VisibleButton()
     {
         URL_GETEMPLOYEEID = Utils.GET_EMPLOYEEID + healthrecordid;
-
+        //Toast.makeText(DoctorHealthRecordPage.this, "VisibleButton!", Toast.LENGTH_SHORT).show();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_GETEMPLOYEEID, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) { ;
                 if (txtEmployeeID.getText().toString().equals(response))
                 {
                     imageButtonUpdate.setVisibility(View.VISIBLE);
-                    Toast.makeText(DoctorHealthRecordPage.this, "Hide Button Success!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(DoctorHealthRecordPage.this, "Hide Button Success!", Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {

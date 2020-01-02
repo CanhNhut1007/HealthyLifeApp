@@ -62,7 +62,7 @@ public class DoctorPatientRecordPage extends AppCompatActivity {
         txtPatientName = (TextView) findViewById(R.id.txtPatientNameDPHR);
         imageButtonAdd = (ImageButton) findViewById(R.id.imageButtonAddRecord);
         Intent intent = getIntent();
-        accountpatientid = intent.getStringExtra("AccountID");
+        accountpatientid = intent.getStringExtra("UserID");
         accountemployeeid = intent.getStringExtra("AccountEmployeeID");//AccountID of Doctor
         //Toast.makeText(DoctorPatientRecordPage.this, "ID Doctor: "+accountemployeeid + "|| ID Patient: " + accountpatientid, Toast.LENGTH_SHORT).show();
         URL_GETNAME = Utils.GET_PATIENT_NAME + accountpatientid;

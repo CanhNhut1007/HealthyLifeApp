@@ -1,7 +1,7 @@
 package com.example.healthlife;
 
 public class Utils {
-    public static final String IP_ADDRESS = "http://172.17.22.178/android-laravel/public/";
+    public static final String IP_ADDRESS = "http://192.168.0.107/android-laravel/app-v1/public/";
     public static final String LOGIN_URL = IP_ADDRESS + "login";
     public static final String REGISTER_URL = IP_ADDRESS + "register";
 

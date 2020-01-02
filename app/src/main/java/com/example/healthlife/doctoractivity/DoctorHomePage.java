@@ -82,7 +82,7 @@ public class DoctorHomePage extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
         Intent intent = getIntent();
-        accountid = intent.getStringExtra("AccountID");
+        accountid = intent.getStringExtra("UserID");
         Toast.makeText(DoctorHomePage.this, accountid, Toast.LENGTH_SHORT).show();
 
 
@@ -95,43 +95,43 @@ public class DoctorHomePage extends AppCompatActivity {
                 if (id == R.id.homedoctor)
                 {
                     Intent intent = new Intent(DoctorHomePage.this, DoctorHomePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.listpatient)
                 {
                     Intent intent = new Intent(DoctorHomePage.this, DoctorListPatientPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.notificationdoctor)
                 {
                     Intent intent = new Intent(DoctorHomePage.this, DoctorNotificationPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.accountdoctor)
                 {
                     Intent intent = new Intent(DoctorHomePage.this, DoctorAccountPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.profiledoctor)
                 {
                     Intent intent = new Intent(DoctorHomePage.this, DoctorProfilePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.settingdoctor)
                 {
                     Intent intent = new Intent(DoctorHomePage.this, DoctorSettingPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.supportdoctor)
                 {
                     Intent intent = new Intent(DoctorHomePage.this, DoctorSupportPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.logoutdoctor)
@@ -181,7 +181,7 @@ public class DoctorHomePage extends AppCompatActivity {
                     JSONArray array = new JSONArray(response);
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject patient = array.getJSONObject(i);
-                        arrayList.add(new Patient(accountid, patient.getString("AccountID"), patient.getString("PatientName"), patient.getString("IdentifyCard"), patient.getString("PatientID"), R.drawable.ic_account_circle_black_24dp));
+                        arrayList.add(new Patient(accountid, patient.getString("UserID"), patient.getString("PatientName"), patient.getString("IdentifyCard"), patient.getString("PatientID"), R.drawable.ic_account_circle_black_24dp));
                     }
                     patientAdapter = new PatientAdapter(arrayList, getApplicationContext());
                     recyclerView.setAdapter(patientAdapter);
@@ -218,7 +218,7 @@ public class DoctorHomePage extends AppCompatActivity {
                                                 JSONArray array = new JSONArray(response);
                                                 for (int i = 0; i < array.length(); i++) {
                                                     JSONObject patient = array.getJSONObject(i);
-                                                    arrayList.add(new Patient(accountid, patient.getString("AccountID"), patient.getString("PatientName"), patient.getString("IdentifyCard"), patient.getString("PatientID"), R.drawable.ic_account_circle_black_24dp));
+                                                    arrayList.add(new Patient(accountid, patient.getString("UserID"), patient.getString("PatientName"), patient.getString("IdentifyCard"), patient.getString("PatientID"), R.drawable.ic_account_circle_black_24dp));
                                                 }
                                                 patientAdapter = new PatientAdapter(arrayList, getApplicationContext());
                                                 recyclerView.setAdapter(patientAdapter);

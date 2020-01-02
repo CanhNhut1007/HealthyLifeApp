@@ -47,7 +47,7 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.ViewHolder
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, PatientDoctorProfilePage.class);
-                intent.putExtra("AccountID", accountid);
+                intent.putExtra("UserID", accountid);
                 context.startActivity(intent);
             }
         });

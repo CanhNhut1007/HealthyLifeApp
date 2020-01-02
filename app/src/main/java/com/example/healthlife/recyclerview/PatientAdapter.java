@@ -47,7 +47,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DoctorPatientRecordPage.class);
-                intent.putExtra("AccountID", holder.mAccountID);
+                intent.putExtra("UserID", holder.mAccountID);
                 intent.putExtra("AccountEmployeeID", holder.mAccountEmployeeID);
                 context.startActivity(intent);
             }

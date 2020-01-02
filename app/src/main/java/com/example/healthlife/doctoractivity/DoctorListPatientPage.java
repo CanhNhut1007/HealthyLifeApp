@@ -3,6 +3,7 @@ package com.example.healthlife.doctoractivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -46,7 +47,7 @@ public class DoctorListPatientPage extends AppCompatActivity {
     ArrayList<Patient> arrayList;
     PatientAdapter patientAdapter;
     RequestQueue requestQueue;
-    String URL_LISTPATIENT = Utils.GET_LIST_PATIENT + "ID00000001";
+    //String URL_LISTPATIENT = Utils.GET_LIST_PATIENT + "ID00000001";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +70,8 @@ public class DoctorListPatientPage extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
         Intent intent = getIntent();
-        accountid = intent.getStringExtra("AccountID");
+        accountid = intent.getStringExtra("UserID");
+        Toast.makeText(DoctorListPatientPage.this, accountid, Toast.LENGTH_SHORT).show();
 
 
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigationlistpatient);
@@ -81,43 +83,43 @@ public class DoctorListPatientPage extends AppCompatActivity {
                 if (id == R.id.homedoctor)
                 {
                     Intent intent = new Intent(DoctorListPatientPage.this, DoctorHomePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.listpatient)
                 {
                     Intent intent = new Intent(DoctorListPatientPage.this, DoctorListPatientPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.notificationdoctor)
                 {
                     Intent intent = new Intent(DoctorListPatientPage.this, DoctorNotificationPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.accountdoctor)
                 {
                     Intent intent = new Intent(DoctorListPatientPage.this, DoctorAccountPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.profiledoctor)
                 {
                     Intent intent = new Intent(DoctorListPatientPage.this, DoctorProfilePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.settingdoctor)
                 {
                     Intent intent = new Intent(DoctorListPatientPage.this, DoctorSettingPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.supportdoctor)
                 {
                     Intent intent = new Intent(DoctorListPatientPage.this, DoctorSupportPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.logoutdoctor)
@@ -152,14 +154,18 @@ public class DoctorListPatientPage extends AppCompatActivity {
         patientAdapter = new PatientAdapter(arrayList, getApplicationContext());
         recyclerView.setAdapter(patientAdapter);*/
 
+
+        String URL_LISTPATIENT = Utils.GET_LIST_PATIENT + accountid;
+        //Toast.makeText(DoctorListPatientPage.this, URL_LISTPATIENT, Toast.LENGTH_SHORT).show();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_LISTPATIENT, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                //Toast.makeText(DoctorListPatientPage.this, response, Toast.LENGTH_SHORT).show();
                 try {
                     JSONArray array = new JSONArray(response);
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject patient = array.getJSONObject(i);
-                        arrayList.add(new Patient(accountid, patient.getString("AccountID"), patient.getString("PatientName"), patient.getString("IdentifyCard"), patient.getString("PatientID"), R.drawable.ic_account_circle_black_24dp));
+                        arrayList.add(new Patient(accountid, patient.getString("UserID"), patient.getString("PatientName"), patient.getString("IdentifyCard"), patient.getString("PatientID"), R.drawable.ic_account_circle_black_24dp));
                     }
                     patientAdapter = new PatientAdapter(arrayList, getApplicationContext());
                     recyclerView.setAdapter(patientAdapter);

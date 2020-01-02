@@ -47,7 +47,7 @@ public class PatientMyRecordPage extends AppCompatActivity {
     ArrayList<HealthRecord> arrayList;
     HealthRecordAdapter healthRecordAdapter;
     RequestQueue requestQueue;
-    String URL_HEALTHRECORD = Utils.GET_LIST_HEALTHRECORD + "ID00000004";
+    //String URL_HEALTHRECORD = Utils.GET_LIST_HEALTHRECORD + "ID00000004";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class PatientMyRecordPage extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
         Intent intent = getIntent();
-        accountid = intent.getStringExtra("AccountID");
+        accountid = intent.getStringExtra("UserID");
         Toast.makeText(PatientMyRecordPage.this, accountid, Toast.LENGTH_SHORT).show();
 
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigationmyrecord_p);
@@ -82,43 +82,43 @@ public class PatientMyRecordPage extends AppCompatActivity {
                 if (id == R.id.homepatient)
                 {
                     Intent intent = new Intent(PatientMyRecordPage.this, PatientHomePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.myrecord)
                 {
                     Intent intent = new Intent(PatientMyRecordPage.this, PatientMyRecordPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.notificationpatient)
                 {
                     Intent intent = new Intent(PatientMyRecordPage.this, PatientNotificationPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.accountpatient)
                 {
                     Intent intent = new Intent(PatientMyRecordPage.this, PatientAccountPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.profilepatient)
                 {
                     Intent intent = new Intent(PatientMyRecordPage.this, PatientProfilePage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.settingpatient)
                 {
                     Intent intent = new Intent(PatientMyRecordPage.this, PatientSettingPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.supportpatient)
                 {
                     Intent intent = new Intent(PatientMyRecordPage.this, PatientSupportPage.class);
-                    intent.putExtra("AccountID", accountid);
+                    intent.putExtra("UserID", accountid);
                     startActivity(intent);
                 }
                 else if (id == R.id.logoutpatient)
@@ -138,6 +138,7 @@ public class PatientMyRecordPage extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         arrayList = new ArrayList<>();
 
+        String URL_HEALTHRECORD = Utils.GET_LIST_HEALTHRECORD + accountid;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_HEALTHRECORD, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
