@@ -16,21 +16,18 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.healthlife.R;
 import com.example.healthlife.Utils;
 import com.example.healthlife.signin.SignInPage;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class SignUpPage extends AppCompatActivity {
 
-    String URL_SIGNUP = "http://10.45.159.177/android/SignUp.php";
+    //String URL_SIGNUP = "http://10.45.159.177/android/SignUp.php";
 
     ImageButton imageButtonBack;
     EditText edtEmail, edtPassword, edtConrifmPassword;
@@ -83,20 +80,14 @@ public class SignUpPage extends AppCompatActivity {
         btContinueSu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent = new Intent(SignUpPage.this, VerificationPage.class);
-                intent.putExtra("EmailVt", edtEmail.getText().toString());
-                startActivity(intent);*/
-                //if (edtPassword.getText().toString().equals(edtConrifmPassword.getText().toString()))
                 if (!isEmailValid(edtEmail.getText().toString()))
                 {
                     txtError.setText("");
                     Toast.makeText(getApplicationContext(), "Please enter your mail again!", Toast.LENGTH_LONG).show();
-                    //Verification();
                 }
                 else if (!edtPassword.getText().toString().equals(edtConrifmPassword.getText().toString()))
                 {
                     Toast.makeText(getApplicationContext(), "Password and Confirm Password aren't the same. Please enter again!", Toast.LENGTH_LONG).show();
-                    //txtError.setText("Password and Confirm Password aren't the same. Please enter again");
                     edtPassword.setText("");
                     edtConrifmPassword.setText("");
                 }
@@ -107,9 +98,8 @@ public class SignUpPage extends AppCompatActivity {
                 else
                     {
                         Toast.makeText(getApplicationContext(), "Sign up success!", Toast.LENGTH_LONG).show();
-                        Verification();
+                        SignIn();
                 }
-
             }
         });
     }
@@ -118,83 +108,37 @@ public class SignUpPage extends AppCompatActivity {
             return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
         }
 
-    private void Verification() {
-
-        Map<String, String> params = new HashMap();
-        params.put("email", edtEmail.getText().toString());
-        params.put("pass", edtPassword.getText().toString());
-
-        JSONObject jsonObject = new JSONObject(params);
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, Utils.REGISTER_URL, jsonObject, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                //Toast.makeText(getApplication(), response+"", Toast.LENGTH_SHORT).show();
-                String accountid  = null;
-                try {
-                    accountid = response.getString("AccountID");
-                    Intent intent = new Intent(SignUpPage.this, VerificationPage.class);
-                    intent.putExtra("EmailVt", edtEmail.getText().toString());
-                    intent.putExtra("AccountID", accountid);
-                    startActivity(intent);
-                } catch (JSONException e) {
-                    e.printStackTrace();
+    public void SignIn()
+    {
+        final StringRequest postRequest = new StringRequest(Request.Method.POST, Utils.REGISTER_URL,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        // response
+                        Toast.makeText(SignUpPage.this, response, Toast.LENGTH_SHORT).show();
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // error
+                        Toast.makeText(SignUpPage.this, "Error! Please again!", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
-        }, new Response.ErrorListener() {
+        ) {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(SignUpPage.this, error+". Loi roi", Toast.LENGTH_SHORT).show();
-            }
-        }) /*{
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap();
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
                 params.put("email", edtEmail.getText().toString());
                 params.put("pass", edtPassword.getText().toString());
-                return params;
-            }
-        }*/;
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(jsonObjectRequest);
 
-        /*StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_SIGNUP, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(getApplication(), response, Toast.LENGTH_SHORT).show();
-                JSONObject obj;
-
-                try {
-                    obj = new JSONObject(response);
-
-                    String accountid  = obj.getString("AccountID");
-                    Intent intent = new Intent(SignUpPage.this, VerificationPage.class);
-                    intent.putExtra("EmailVt", edtEmail.getText().toString());
-                    intent.putExtra("AccountID", accountid);
-                    startActivity(intent);
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(SignUpPage.this, error+"", Toast.LENGTH_SHORT).show();
-            }
-        }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                String Email = edtEmail.getText().toString();
-                String Pass = edtPassword.getText().toString();
-                params.put("email", Email);
-                params.put("pass", Pass);
                 return params;
             }
         };
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);*/
+        requestQueue.add(postRequest);
     }
 }
