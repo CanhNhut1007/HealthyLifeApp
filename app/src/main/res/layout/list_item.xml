@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f2f2f2"
+    android:padding="5dp"
+    android:layout_marginTop="3dp">
+    <TextView
+        android:id="@+id/expandedListItemTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="18dp"
+        android:textColor="#34495e"/>
+
+    <EditText
+        android:id="@+id/expandedListItemContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:ems="10"
+        android:textSize="16dp"
+        android:paddingLeft="15dp"
+        android:background="@android:color/transparent"
+        android:inputType="textPersonName" />
+</LinearLayout>
