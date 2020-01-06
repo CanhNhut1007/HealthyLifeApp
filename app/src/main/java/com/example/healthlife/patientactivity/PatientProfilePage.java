@@ -234,7 +234,7 @@ public class PatientProfilePage extends AppCompatActivity {
                 try {
                     listInfoAbout.add(new InfoClass("Name",response.getString("PatientName")));
                     listInfoAbout.add(new InfoClass("Identify Card",response.getString("IdentifyCard")));
-                    listInfoAbout.add(new InfoClass("Day of Birth",response.getString("DayOfBirth")));
+                    listInfoAbout.add(new InfoClass("Day of Birth",response.getString("DayofBirth")));
                     listInfoAbout.add(new InfoClass("Gender",response.getString("Gender")));
                     listInfoContact.add(new InfoClass("Phone Number", response.getString("PhoneNumber")));
                     listInfoContact.add(new InfoClass("Address", response.getString("Address")));

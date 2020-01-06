@@ -176,7 +176,7 @@ public class PatientHomePage extends AppCompatActivity {
                     JSONArray array = new JSONArray(response);
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject doctor = array.getJSONObject(i);
-                        arrayList.add(new Doctor(doctor.getString("UserID"), doctor.getString("EmployeeName"), doctor.getString("Speciality"), doctor.getString("AccountID"), R.drawable.ic_account_circle_black_24dp));
+                        arrayList.add(new Doctor(doctor.getString("UserID"), doctor.getString("EmployeeName"), doctor.getString("Speciality"), doctor.getString("EmployeeID"), R.drawable.ic_account_circle_black_24dp));
                     }
                     doctorAdapter = new DoctorAdapter(arrayList, getApplicationContext());
                     recyclerView.setAdapter(doctorAdapter);

@@ -221,31 +221,6 @@ android:id="@+id/drawerlayoutsetting_p">
         android:theme="?attr/actionBarTheme"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/buttonSaveSet_p"
-        android:layout_width="139dp"
-        android:layout_height="43dp"
-        android:background="@drawable/rounding_button"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
-    <Button
-        android:id="@+id/buttonCancelSet_p"
-        android:layout_width="139dp"
-        android:layout_height="43dp"
-        android:background="@drawable/rounding_button"
-        android:text="Cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 <com.google.android.material.navigation.NavigationView

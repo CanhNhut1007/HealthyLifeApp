@@ -231,7 +231,7 @@ public class DoctorProfilePage extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 try {
                     listInfoAbout.add(new InfoClass("Employee Name",response.getString("EmployeeName")));
-                    listInfoAbout.add(new InfoClass("Date of Birth",response.getString("DayOfBirth")));
+                    listInfoAbout.add(new InfoClass("Date of Birth",response.getString("DayofBirth")));
                     listInfoAbout.add(new InfoClass("Identify Card",response.getString("IdentifyCard")));
                     listInfoAbout.add(new InfoClass("Gender",response.getString("Gender")));
                     listInfoAbout.add(new InfoClass("Phone Number",response.getString("PhoneNumber")));
