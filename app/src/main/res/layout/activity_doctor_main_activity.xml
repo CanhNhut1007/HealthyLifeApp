@@ -18,7 +18,7 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
+            android:id="@+id/tabLayoutdoctor"
             android:layout_width="match_parent"
             android:layout_height="62dp"
             android:layout_gravity="bottom"

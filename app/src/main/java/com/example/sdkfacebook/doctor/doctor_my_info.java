@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
@@ -30,9 +31,10 @@ import java.util.List;
 public class doctor_my_info extends Fragment {
 
     View row;
-    EditText aboutbirday;
+    EditText aboutbirday, edtSex;
     Calendar C;
     DatePickerDialog dpd;
+    Button getSex;
 //    ExpandableListView expandableListView;
 //    ExpandableListAdapter expandableListAdapter;
 //    List<String> expandableListTitle;
@@ -67,10 +69,21 @@ public class doctor_my_info extends Fragment {
         adapterlanguage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerlanguage.setAdapter(adapterlanguage);
 
-        Spinner spinnersex = row.findViewById(R.id.spinner_sex);
+        final Spinner spinnersex = row.findViewById(R.id.spinner_sex);
         ArrayAdapter<String> adaptersex = new ArrayAdapter<String >(getActivity(), android.R.layout.simple_list_item_1 ,getResources().getStringArray(R.array.sex));
         adaptersex.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnersex.setAdapter(adaptersex);
+
+        getSex = row.findViewById(R.id.getsex);
+        edtSex = row.findViewById(R.id.edtsex);
+
+        getSex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text =spinnersex.getSelectedItem().toString();
+                edtSex.setText(text);
+            }
+        });
 
         return row;
     }

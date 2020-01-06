@@ -18,32 +18,34 @@ import android.widget.TableLayout;
 import android.widget.Toolbar;
 
 import com.example.sdkfacebook.R;
+import com.example.sdkfacebook.mainactivity.PageAdapter;
 import com.example.sdkfacebook.mainactivity.PageAdapterSetting;
 import com.google.android.material.tabs.TabLayout;
 
 public class doctor_main_activity extends AppCompatActivity{
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_main_activity);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setActionBar(toolbar);
 
-        TabLayout tabLayout=(TabLayout)findViewById(R.id.tabLayout);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayoutdoctor);
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
         tabLayout.addTab(tabLayout.newTab().setText("My Patient"));
-        tabLayout.addTab(tabLayout.newTab().setText("My Infomation"));
-        tabLayout.addTab(tabLayout.newTab().setText("Accout"));
+        tabLayout.addTab(tabLayout.newTab().setText("My Information"));
+        tabLayout.addTab(tabLayout.newTab().setText("Account"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pagerdoctorpage);
-        PageAdapterSetting pageAdapterSetting=new PageAdapterSetting(getSupportFragmentManager(),tabLayout.getTabCount());
-        viewPager.setAdapter(pageAdapterSetting);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        final ViewPager viewPagerDoctor = (ViewPager) findViewById(R.id.pagerdoctorpage);
+        PageAdapterDoctor pageAdapterDoctor = new PageAdapterDoctor(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPagerDoctor.setAdapter(pageAdapterDoctor);
+        viewPagerDoctor.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+                viewPagerDoctor.setCurrentItem(tab.getPosition());
             }
 
             @Override
