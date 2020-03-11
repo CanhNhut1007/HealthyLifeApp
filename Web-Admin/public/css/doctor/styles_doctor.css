@@ -1,0 +1,361 @@
+.btn, .textinput, input {
+  font-size: 14px;
+}
+.btn, .header {
+  font-weight: 600;
+}
+.textinput {
+  margin-top: 0;
+  width: 319px;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+}
+#imgBody, .bar {
+  width: 100%}
+.bar {
+  background-color: #12505f;
+  height: 64px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.containerBar {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0 50px;
+}
+.options, .righthand, .videoplaying {
+  position: absolute;
+}
+.options {
+  right: 0;
+  text-align: right;
+  top: 0;
+  height: 100%}
+.nav-item {
+  cursor: pointer;
+  display: block;
+  height: 64px;
+  line-height: 64px;
+  padding-right: 24px;
+}
+.nav-tabs .nav-link {
+  padding: 0 24px;
+}
+.nav-tabs .dropdown-menu {
+  display: none;
+  background-color: #09313a;
+}
+.dropdown-item, .nav-item.dropdown.show:hover .dropdown-menu, .nav-link, .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active:hover .dropdown-menu {
+  display: block;
+}
+.nav.nav-tabs .nav-item a {
+  color: #fff;
+  cursor: pointer;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  text-decoration: none;
+  background-color: #0a6377;
+}
+.nav-item a:hover, .nav.nav-tabs .nav-item a:hover {
+  background-color: #1b5c6a;
+  border: none;
+}
+.nav-tabs {
+  border-bottom: none;
+  height: 100%}
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+.Body {
+  padding-top: 64px;
+}
+.imageBody {
+  height: 442px;
+}
+.container, .righthand, .videoplaying, source {
+  height: 100%}
+.navbar-expand-md .navbar-nav {
+  border-bottom: none;
+  height: 100%}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  padding: 0 24px;
+}
+.nav-link {
+  padding: 0;
+}
+.navbar {
+  padding: 0 1em;
+}
+#navcol-1 ul li a {
+  color: #fff;
+}
+.dropdown-menu {
+  padding: 0;
+  margin: 0;
+  background-color: #124e59;
+}
+.dropdown-menu.show {
+  display: none;
+}
+.nav-item.dropdown.show:hover dropdown-menu.show {
+  display: block;
+  background-color: #165e6c;
+}
+.card {
+  top: 7%;
+  border: none;
+}
+.card-img-overlay {
+  color: #fff;
+  padding-left: 20%;
+  line-height: 70px;
+}
+#navcol-1 {
+  background-color: #12505f;
+}
+.videoplaying {
+  left: 0;
+  width: 75%;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+}
+.videoplaying iframe {
+  object-fit: cover;
+}
+.righthand {
+  right: 0;
+  width: 25%;
+  min-width: 375px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+}
+.container {
+  margin: 0 auto;
+  padding: 10vh 28px 0;
+  text-align: center;
+}
+.logo {
+  margin: 0 40px 0 0;
+}
+.Input_Info {
+  margin-bottom: 20px;
+}
+.label {
+  color: #7d848b;
+  margin-bottom: 4px;
+  text-align: left;
+}
+.btn, .contentheader, .divbutton, .head, .orsignup {
+  text-align: center;
+}
+input {
+  padding: 0 22px 0 12px;
+  background-color: #dfe4e998;
+  border: 0;
+  border-radius: 4px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  vertical-align: bottom;
+  width: 100%}
+.btn {
+  border-radius: 22px;
+  cursor: pointer;
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 24px;
+  margin: 35px 0 16px;
+  text-transform: none;
+  text-decoration: none;
+  vertical-align: top;
+}
+.btn.color {
+  background: #3692e7;
+  color: #fff;
+}
+.btn.depth {
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .2);
+}
+.forgotpassword {
+  position: relative;
+}
+.forgotpassword a {
+  right: 0;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+.orsignup {
+  height: 50px;
+  line-height: 50px;
+}
+.content {
+  margin-bottom: 20px;
+}
+.carousel-indicators {
+  list-style: circle;
+}
+.carousel-inner {
+  position: relative;
+  height: 70%;
+  overflow: hidden;
+}
+#carousel-1, .divcarousel {
+  height: 116px;
+}
+.carousel-indicators li {
+  box-sizing: content-box;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  width: 30px;
+  height: 3px;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #000;
+  background-clip: padding-box;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: .5;
+  transition: opacity .6s ease;
+}
+@media (min-width:768px) {
+  #test1 {
+  display: flex!important;
+  flex-basis: auto;
+}
+#test2 {
+  display: none;
+}
+.options {
+  vertical-align: middle;
+  text-align: center;
+}
+}.mobileIntroPage {
+  width: 100%;
+  height: 669px;
+}
+.mobileVideoplaying {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border: none;
+  overflow: hidden;
+  bottom: 0;
+}
+@media (min-width:700px) {
+  #btnlogin {
+  display: none;
+}
+}@media (max-width:700px) {
+  .videoplaying {
+  width: 100%;
+  background-color: #343a40;
+}
+.righthand {
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1;
+  background-color: transparent;
+  right: auto;
+  left: auto;
+  left: 0;
+  width: 100%;
+  min-width: auto;
+}
+.orsignup {
+  display: none;
+}
+#btnlogin {
+  margin-right: 8px;
+  background-color: transparent;
+  box-shadow: 0 2px 6px #7a7a7a;
+  border: 1px solid #968c8c;
+}
+.divbutton {
+  bottom: 27px;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  text-align: center;
+}
+.divcarousel {
+  bottom: 122px;
+  position: absolute;
+  width: 100%;
+  right: 0;
+}
+.card {
+  top: 0;
+}
+}@media (max-width:768px) {
+  #test1 {
+  display: none;
+}
+.navbar-expand-md {
+  height: 100%}
+}.navbar-toggler {
+  padding: .25rem .75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+.navbar>.container, .navbar>.container-fluid {
+  display: initial;
+}
+@media (max-width:500px) {
+  #btnlogin, #signup {
+  width: 60%;
+  margin: 0;
+}
+}.form-control.btn.color.depth {
+  width: 100px;
+}
+@media (max-width:700px) {
+  .forgotpassword {
+  display: inline-block;
+  width: 319px;
+}
+}.head {
+  border-bottom: 1px solid #e9ecef;
+  padding: 10px 0;
+  position: relative;
+}
+.login {
+  width: 500px;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 8px;
+  background-color: #fff;
+}
+.divform {
+  width: 319px;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.login h3 {
+  margin: 0 0 60px;
+}
+.loginAdminPage {
+  background-color: #f4f5f7;
+  height: 650px;
+}
+.contentheader, .loginAdminPage .head {
+  background-color: #fff;
+}
+.contentheader {
+  padding: 20px;
+  margin-bottom: 60px;
+}
